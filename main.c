@@ -17,7 +17,10 @@ int main()
         dice_rolls[i] = dice;
     }
 
-    int rolls[8] = {0}; // initialize array with zero.
+    int rolls[6] = {0}; // initialize array with zero.
+    int sum = 0;
+    float mean = 0.0f;
+    
 
     for (int i = 0; i < MAX_ROLLS; ++i) {
         int dice_value = dice_rolls[i];
@@ -27,11 +30,16 @@ int main()
         (dice_rolls[i] == 4) ? rolls[dice_value - 1]++ : (void)0;
         (dice_rolls[i] == 5) ? rolls[dice_value - 1]++ : (void)0;
         (dice_rolls[i] == 6) ? rolls[dice_value - 1]++ : (void)0;
+        sum += dice_value;
     }
+
+    mean = sum / 100.0;
 
     for (int i = 0; i < (sizeof(rolls) / sizeof(int)); ++i) {
         printf("%d\n", rolls[i]);
     }
+    printf("%d\n", sum);
+    printf("%.1f\n", mean);
 
     return 0;
 }

@@ -14,7 +14,7 @@ int main()
 
     for (int i = 0; i < MAX_ROLLS; ++i) {
         int dice = (rand()%6) + 1;
-        printf("%d\n", dice);
+        dice_rolls[i] = dice;
     }
 
     return 0;
